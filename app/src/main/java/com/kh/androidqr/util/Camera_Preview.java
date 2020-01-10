@@ -11,6 +11,7 @@ import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
 import java.io.IOException;
+import android.hardware.camera2.*;
 
 public class Camera_Preview extends SurfaceView implements  SurfaceHolder.Callback {
 
@@ -31,7 +32,7 @@ public class Camera_Preview extends SurfaceView implements  SurfaceHolder.Callba
 
         cameraSource = new CameraSource
                 .Builder(context, barcodeDetector)
-                .setFacing(CameraSource.CAMERA_FACING_BACK)
+                .setFacing(CameraSource.CAMERA_FACING_FRONT)
                 .setRequestedFps(29.8f)
                 .setRequestedPreviewSize(preview_width,preview_height)
                 .setAutoFocusEnabled(true)
@@ -112,6 +113,11 @@ public class Camera_Preview extends SurfaceView implements  SurfaceHolder.Callba
         //_camera.release();
         cameraSource.stop();
 
+    }
+
+    public void mm(Context context)
+    {
+        CameraManager cm = (CameraManager) context.getSystemService(Context.CAMERA_SERVICE);
     }
 
 }

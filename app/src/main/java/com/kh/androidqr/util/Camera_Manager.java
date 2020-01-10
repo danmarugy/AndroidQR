@@ -4,7 +4,6 @@ import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.util.Log;
 import androidx.appcompat.app.AppCompatActivity;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,9 +13,6 @@ public class Camera_Manager {
     private Camera c = null;
     private AppCompatActivity main_activity;
 
-    public Camera_Manager(){
-
-    }
 
     public Camera_Manager(AppCompatActivity main_activity)
     {
@@ -24,7 +20,6 @@ public class Camera_Manager {
 
         if(checkCameraExist()) {
             setCameraInstance();
-        } else {
         }
     }
 
@@ -44,6 +39,11 @@ public class Camera_Manager {
     {
         Log.d("camera", c.toString());
         return c;
+    }
+
+    public void stop_Camera()
+    {
+        c.release();
     }
 
     // 카메라 하드웨어 존재 여부
