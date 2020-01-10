@@ -118,6 +118,7 @@ public class Camera_Preview extends SurfaceView implements  SurfaceHolder.Callba
     public void mm(Context context)
     {
         CameraManager cm = (CameraManager) context.getSystemService(Context.CAMERA_SERVICE);
+        cm
     }
 
 }
