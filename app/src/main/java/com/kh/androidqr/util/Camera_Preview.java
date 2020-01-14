@@ -21,10 +21,9 @@ public class Camera_Preview extends SurfaceView implements  SurfaceHolder.Callba
     public static String barcodeContents = null;
     private String prebarcodeContents;
 
-    public Camera_Preview(final Context context, int preview_width, int preview_height) //Camera camera)
+    public Camera_Preview(final Context context, int preview_width, int preview_height) //Camera camera
     {
         super(context);
-        //_camera = camera;
         barcodeDetector = new BarcodeDetector.Builder(context)
                 .build();
 
@@ -34,7 +33,7 @@ public class Camera_Preview extends SurfaceView implements  SurfaceHolder.Callba
                 .Builder(context, barcodeDetector)
                 .setFacing(CameraSource.CAMERA_FACING_FRONT)
                 .setRequestedFps(29.8f)
-                .setRequestedPreviewSize(preview_width,preview_height)
+                .setRequestedPreviewSize(960,1200)
                 .setAutoFocusEnabled(true)
                 .build();
 
@@ -117,8 +116,6 @@ public class Camera_Preview extends SurfaceView implements  SurfaceHolder.Callba
 
     public void mm(Context context)
     {
-        CameraManager cm = (CameraManager) context.getSystemService(Context.CAMERA_SERVICE);
-        cm
     }
 
 }

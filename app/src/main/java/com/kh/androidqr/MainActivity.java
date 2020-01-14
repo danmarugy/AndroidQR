@@ -4,6 +4,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.MovementMethod;
+import android.text.method.ScrollingMovementMethod;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -83,6 +85,7 @@ public class MainActivity extends AppCompatActivity {
 
         preview = findViewById(R.id.camera_view_main);
         notice_view = findViewById(R.id.notice_view);
+        notice_view.setMovementMethod(new ScrollingMovementMethod());
         preview.addView(cp);
 /*
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.button);
@@ -107,16 +110,17 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent intent) {
         super.onActivityResult(requestCode, resultCode, intent);
-        System.out.println("the code is catch");
     }
 
     @Override
     public void onBackPressed() {
+        /*
         if (System.currentTimeMillis() - time >= 2000) {
             time = System.currentTimeMillis();
             Toast.makeText(getApplicationContext(), "뒤로 버튼을 한번 더 누르면 종료합니다.", Toast.LENGTH_SHORT).show();
         } else if (System.currentTimeMillis() - time < 2000) {
             finish();
         }
+         */
     }
 }
