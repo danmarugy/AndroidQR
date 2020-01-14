@@ -38,7 +38,7 @@ public class Camera_Preview extends SurfaceView implements  SurfaceHolder.Callba
                 .build();
 
         _holder.addCallback(this);
-        //_holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
+        _holder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
 
         barcodeDetector.setProcessor(new Detector.Processor<Barcode>() {
             @Override

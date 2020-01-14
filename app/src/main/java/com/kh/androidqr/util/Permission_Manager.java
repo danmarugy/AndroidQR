@@ -1,14 +1,18 @@
 package com.kh.androidqr.util;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.view.Window;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+
+import com.kh.androidqr.MainActivity;
 
 import java.util.ArrayList;
 
@@ -19,6 +23,7 @@ public class Permission_Manager extends AppCompatActivity{
 
     public Permission_Manager(AppCompatActivity context) {
         this.context = context;
+
         permissionCheck();
     }
 
@@ -34,7 +39,7 @@ public class Permission_Manager extends AppCompatActivity{
             if (arrayPermission.size() > 0) {
                 String strArray[] = new String[arrayPermission.size()];
                 strArray = arrayPermission.toArray(strArray);
-                ActivityCompat.requestPermissions(context, strArray, PERMISSION_REQUEST_CODE);
+                ActivityCompat.requestPermissions(context,strArray, PERMISSION_REQUEST_CODE);
             } else {
                 // Initialize 코드
             }
